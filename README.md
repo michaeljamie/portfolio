@@ -12,6 +12,8 @@
 
 > How to contact me
 
-https://www.linkedin.com/in/michaeljamiejohnston/
+Live Site Here: https://www.michaeljamie.com
+
+LInkedIn: https://www.linkedin.com/in/michaeljamiejohnston/
 
 

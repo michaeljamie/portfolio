@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "michaeljamie <familiarfletcher@gmail.com>",
-  "proxy": 3005,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:9000"
+    },
+    "/auth": {
+      "target": "http://localhost:9000"
+    }
+  },
   "main": "./server/server.js",
   "private": true,
   "scripts": {

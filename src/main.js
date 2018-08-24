@@ -6,9 +6,9 @@ import router from './router'
 import VueParticles from 'vue-particles'
 import VueScrollTo from 'vue-scrollto'
 import VueCarousel from 'vue-carousel'
-import Axios from 'axios';
+import axios from 'axios';
 
-Vue.use(Axios)
+Vue.use(axios)
 Vue.use(VueCarousel)
 Vue.use(VueParticles)
 Vue.use(VueScrollTo)

@@ -2,21 +2,20 @@ module.exports = {
 
 
     send: (req, res ) => {
-        const { formname, formemail, formsubject, formmessage } = req.body;
+        console.log(req.body)
+        const { name, email, message } = req.body;
         const output = `
         <div style = 'margin: 0px; height: 750px; width: 450px; background: #2AABE2';>
     
-            <img style = 'height: 140px; margin-left: 140px; margin-top: 30px;' src='https://lh3.googleusercontent.com/-Cm-4F7seaKE/W151RchQuUI/AAAAAAAAzPA/I-RekvHbiQwFQt-3TTzLmbOF4qOofPwsQCL0BGAYYCw/h362/2018-07-29.png' alt="avatar"/>
-            <h3 style = 'color: white; font-size: 50px; margin-left: 65px;'>Doodle Ninja</h3>
+            <h3 style = 'color: white; font-size: 50px; margin-left: 65px;'>Contact Received!!</h3>
             <p style = 'color: white; font-size: 25px;'>You have a new contact request: </p>
-            <h3 style = 'color: white; font-size: 25px;'>Contact Details</h3>
+            <h3 style = 'color: white; font-size: 25px;'>Contact Details:</h3>
             <ul>
-                <li style = 'color: white; font-size: 30px;'>Name: ${formname}</li>
-                <li style = 'color: white; font-size: 30px;'>Email: ${formemail}</li>
-                <li style = 'color: white; font-size: 30px;'>Subject: ${formsubject}</li>
+                <li style = 'color: white; font-size: 30px;'>Name: ${name}</li>
+                <li style = 'color: white; font-size: 30px;'>Email: ${email}</li> 
             </ul>
             <h3 style = 'color: white; font-size: 25px;'>Message</h3>
-            <p style = 'color: white; font-size: 30px;'>${formmessage}</p>
+            <p style = 'color: white; font-size: 30px;'>${message}</p>
         </div>
         `;
 
@@ -43,7 +42,7 @@ module.exports = {
     let mailOptions = {
         from: 'doodleninja@michaeljamiephoto.com', // sender address
         to: 'michaeljamiejohnston@gmail.com, familiarfletcher@gmail.com', // list of receivers
-        subject: 'Doodle Ninja Contact Request ✔', // Subject line
+        subject: 'New Portfolio Contact ✔', // Subject line
         text: 'New Message!', // plain text body
         html: output // html body
     };

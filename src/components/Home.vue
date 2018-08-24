@@ -96,13 +96,13 @@
             </slide>
           </carousel>
           <div class='bottomCar'>
-            <button class='carbut'>Live Site</button>
-            <button class='carbut'>Github</button>
+            <a href="https://doodle.ninja/#/" target="_blank"><button class='carbut'>Live Site</button></a>
+            <a href="https://github.com/michaeljamie" target="_blank"><button class='carbut'>Github</button></a>
           </div>
         </div>
         
       </div>
-      <div class = 'portfolioBack'>
+      <!-- <div class = 'portfolioBack'>
         <div class='portfolioSide'>
           <h3>Personally Developed Web App</h3>
           <h1>PUPPY FINDER</h1>
@@ -118,7 +118,7 @@
           <img src="" alt=""  class = 'portImg'>
         </div>
         
-      </div>
+      </div> -->
     </div>
     <div id="div-skills"></div>
     <div class = 'skills'>
@@ -186,8 +186,8 @@
           <p class= 'skillTag'>POSTMAN</p>
         </div>
         <div class = 'skillCard'>
-          <img class = 'skillLogo'  src='./../assets/jira.png' alt="">
-          <p class= 'skillTag'>JIRA</p>
+          <img class = 'skillLogo'  src='./../assets/jest.svg' alt="">
+          <p class= 'skillTag'>JEST</p>
         </div>
 
         
@@ -199,25 +199,27 @@
       <div class='scrollBlue1'></div>
       <h3 class = 'contactTitle'>GET IN TOUCH</h3>
       <div class='contactMid'>
-        <p class = 'portfolioSubtitle'>I would love to get in touch with you to discuss future opportunities.  Please call, email, or text me at any time convenient to you. <br/> I look forward to hearing from you!</p>
-        <p class = 'portfolioSubtitle'>Phone: (801) 717 - 8250 Email: michaeljamiejohnston@gmail.com</p>
+        <p class = 'portfolioSubtitle1'>I would love to get in touch with you to discuss future opportunities.  Please call, email, or text me at any time convenient to you. <br/> I look forward to hearing from you!</p>
+        <p class = 'portfolioSubtitle1'>Email: michaeljamiejohnston@gmail.com</p>
+        <p class = 'portfolioSubtitle1'>Phone: (801) 717 - 8250</p>
+        
       </div>    
       <div class='contactBottom'>
         <div>
-          <input type="text" class = 'input1' placeholder='Name'>
-          <input type="text" class = 'input1' placeholder='Email'>
+          <input type="text" class = 'input1' placeholder='Name' v-model='name'>
+          <input type="text" class = 'input1' placeholder='Email' v-model='email'>
         </div>
-        <textarea name="text" class = 'input2' id="" cols="30" rows="20" placeholder='Message'></textarea>
-        <button class='buttonStyle1'>Submit</button>
+        <textarea name="text" class = 'input2' id="" cols="30" rows="20" placeholder='Message' v-model='message'></textarea>
+        <button class='buttonStyle1' @click='send'>Submit</button>
       </div>
     </div>
     <div class='footer'>
       <div>
         <a href="https://www.linkedin.com/in/michaeljamiejohnston/" target="_blank"><img class = 'icon' src='./../assets/LinkedIn.png' alt=""></a>
         <a href="https://github.com/michaeljamie" target="_blank"><img class = 'icon' src='./../assets/Github.png' alt=""></a>
-        <a href="https://www.instagram.com/michaeljamie/" target="_blank"><img class = 'icon' src='./../assets/instagram.png' alt=""></a>
-        <a href="https://www.facebook.com/michaelandhannahjohnston" target="_blank"><img class = 'icon' src='./../assets/Facebook.png' alt=""></a>
-        <p class = 'footBottom'>Michael Jamie Development. Custom Built in Vue.js. ©All Rights Reserved.</p>
+        <!-- <a href="https://www.instagram.com/michaeljamie/" target="_blank"><img class = 'icon' src='./../assets/instagram.png' alt=""></a>
+        <a href="https://www.facebook.com/michaelandhannahjohnston" target="_blank"><img class = 'icon' src='./../assets/Facebook.png' alt=""></a> -->
+        <p class = 'footBottom'>Built in Vue.js. ©All Rights Reserved.</p>
       </div>
 
     </div>
@@ -225,11 +227,28 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Home',
   data () {
     return {
+      name: '',
+      email: '',
+      message: ''
+    }
+  },
 
+  methods: {
+    send () {
+      console.log(this.name, this.email, this.message)
+      const obj = {name: this.name, email: this.email, message: this.message}
+      axios.post('http://localhost:9000/api/send', obj).catch(err => {
+        console.log(err);
+      })
+      this.name = '';
+      this.email = '';
+      this.message = '';
     }
   },
   mounted () {
@@ -279,6 +298,7 @@ export default {
 	align-content: stretch;
   margin: 0;
   position: initial;
+  text-align: center;
 }
 
 .particle {
@@ -500,7 +520,7 @@ nav.fade-in {
 }
 
 .portfolio {
-  height: 280vh;
+  height: 140vh;
   background:  linear-gradient( rgba(200, 200, 200, 0.603), rgba(200, 200, 200, 0.583) ), url('./../assets/bkgd2.jpg');
   background-position: center;
   background-size: cover;
@@ -603,7 +623,7 @@ nav.fade-in {
   font-family: 'Raleway', sans-serif;
   margin-bottom: 20px;
   margin-top: 20px;
-  text-align:justify
+  text-align:justify;
 }
 
 .portfolioSide1 {
@@ -755,6 +775,13 @@ nav.fade-in {
   color: #202020;
 }
 
+.portfolioSubtitle1 {
+  color: #202020;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 40px;
+  font-size: 26px;
+}
+
 .contactMid {
   height: 40vh;
   width: 60vw;
@@ -872,6 +899,245 @@ nav.fade-in {
   color: white;
   font-family: 'Raleway', sans-serif;
   margin-top: 30px;
+}
+
+@media (max-width: 500px){
+
+
+  nav {
+    height: 15%;
+  }
+
+  nav.fade-in {
+    height: 20%;
+  }
+
+  .homeNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    position: fixed;
+  }
+
+
+  .navLink {
+    font-size: 13px;
+    margin: 11.5px;
+  }
+
+  .particle {
+    display: none;
+  }
+
+  .buttonStyle {
+    margin-top: 2vh;
+  }
+  
+  .arrow {
+    height: 28px;
+  }
+
+  .mainTitle {
+    height: 100vh;
+  }
+
+  .headTitle {
+    font-size: 28px;
+  }
+
+  .scrollTitle {
+    font-size: 40px;
+    
+  }
+
+  .scrollBlue {
+    width: 25vw;
+  }
+
+  .about {
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .portfolioTitle1 {
+    font-size: 35px;
+  }
+
+  .portfolioSubtitle {
+    font-size: 20px;
+  }
+
+  .Carousel {
+    display: none;
+  }
+
+  .portfolioBack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottomcar {
+    flex-direction: row;
+    margin-top: 5px;
+    align-content: center;
+  }
+
+  .carbut {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    font-size: 17px;
+  }
+
+  .portfolioSide1 {
+    height: 10vh;
+    width: 80vw;
+  }
+
+   .portfolioSide {
+    width: 80vw;
+  }
+
+  .portfolioSide>h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .portfolioSide>h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .portfolioSide>h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .portfolioSide>h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .portfolioSide>p {
+    font-size: 15px;
+  }
+
+  .skills {
+    text-align: center;
+    height: 80vh;
+  }
+  .skillsTitle {
+    font-size: 35px;
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+
+  .skillLogo {
+    height: 40px;
+    margin: 0 5px;
+  }
+
+  .skillTag {
+    font-size: 9px;
+  }
+
+  .skillsRow {
+    width: 90vw;
+    margin-top: 10px;
+    height: 18vh;
+  }
+
+  .contact {
+    font-size: 10px;
+    
+  }
+
+  .scrollBlue1 {
+    width: 25vw;
+  }
+
+  .contactMid {
+    width: 75vw;
+    height: 45vh;
+  }
+
+  .portfolioSubtitle1 {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .contactTitle {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .contactBottom {
+    align-content: center;
+  }
+
+  .input1 {
+    width: 30vw;
+    margin-top: 12vh;
+  }
+
+  .input2 {
+    height: 10vh;
+    width: 60vw;
+  }
+
+  .icon {
+    height: 25px;
+  }
+
+  .footBottom {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+    .portfolioSubtitle1 {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .portfolioSide>p {
+    font-size: 14px;
+  }
+
+  .portfolioBack {
+    height: 200vh;
+  }
+
+  .portfolioSide {
+    height: 90vh;
+    margin-top: 0;
+  }
+  .portfolioSide1 {
+    height: 10vh;
+  }
+
+  .contact {
+    height: 125vh;
+  }
+
+  .about {
+    font-size: 16px;
+  }
+
+  .portfolioTitle1 {
+    margin-top: 8px;
+  }
+
+  .footer {
+    height: 30vh;
+  }
+
 }
 
 @keyframes float {

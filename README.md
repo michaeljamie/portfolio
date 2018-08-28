@@ -14,6 +14,6 @@
 
 Live Site Here: https://www.michaeljamie.com
 
-LInkedIn: https://www.linkedin.com/in/michaeljamiejohnston/
+LinkedIn: https://www.linkedin.com/in/michaeljamiejohnston/
 
 

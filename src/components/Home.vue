@@ -48,7 +48,7 @@
         <H2 class='scrollTitle'>ABOUT ME</H2>
         
       </div>
-        <p class = 'about'>Having worked over 10 years in the tech industry in multiple roles I've really come to appreciate technology and develop a love of learning.  I have an enormous passion for code and for turning ideas into reality.  I am excited to contribute to your team and continue to learn and progress.</p>
+        <p class = 'about'>Having worked over 10 years in the tech industry in multiple roles, I've really come to appreciate technology and develop a love of learning.  I have an enormous passion for code and for turning ideas into reality.  I am excited to contribute to your team and continue to learn and progress.</p>
     </div>
     <div id="div-portfolio"></div>
     <div class='portfolio'>
@@ -65,8 +65,9 @@
           <h1>DOODLE NINJA</h1>
           <h4>Collaborative Whiteboard App for Designers, Developers, Managers, and Teachers</h4>
           <h2>TECHNOLOGY USED:</h2>
-          <h4>React | Redux | HTML | CSS | Javascript | Node | Express | PostgreSQL | Massive | Socket IO | Nodemailer </h4>
+          <h4>React | Redux | HTML | CSS | Javascript | Node | Express | PostgreSQL | Massive | Socket IO | Nodemailer </h4> 
           <p>I created a collaborative whiteboard app where remote teams can sync up and share, visualize, and brainstorm ideas, integrate with all team members simultaneously, and keep everyone involved. UI/UX and design changes can be discussed in real-time with multiple users making and updating the canvas. Teachers can coordinate and interact with students via the digital whiteboard and chat. Managers can review performance with employees remotely, as well as endless other possibilities.</p>
+          
         </div>
         <div class='portfolioSide1'>
           <carousel :per-page="1" :loop="true" :autoplay="true" :autoplayTimeout="3000" paginationActiveColor="#21c2f8" paginationColor="#bdc3c7" class='Carousel'>
@@ -97,28 +98,54 @@
           </carousel>
           <div class='bottomCar'>
             <a href="https://doodle.ninja/#/" target="_blank"><button class='carbut'>Live Site</button></a>
-            <a href="https://github.com/michaeljamie" target="_blank"><button class='carbut'>Github</button></a>
+            <a href="https://github.com/michaeljamie/Personal_Project" target="_blank"><button class='carbut'>Github</button></a>
           </div>
         </div>
         
       </div>
-      <!-- <div class = 'portfolioBack'>
+      <div class = 'portfolioBack'>
         <div class='portfolioSide'>
-          <h3>Personally Developed Web App</h3>
-          <h1>PUPPY FINDER</h1>
-          <h4>App to find adoptable </h4>
+          <h3>Group Developed Web App</h3>
+          <h1>TOOL SHARE</h1>
+          <h4>App </h4>
           <h2>TECHNOLOGY USED:</h2>
           <h4>React | HTML | CSS | Javascript | Node | Express </h4>
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
+          <p>Technology</p>
         </div>
         <div class='portfolioSide1'>
-          <img src="" alt=""  class = 'portImg'>
+           <carousel :per-page="1" :loop="true" :autoplay="true" :autoplayTimeout="3000" paginationActiveColor="#21c2f8" paginationColor="#bdc3c7" class='Carousel'>
+            <slide>
+              <img src='./../assets/HomePage.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Top of Home Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/HomePage2.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Middle of Home Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/HomePage3.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Bottom of Home Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Dashboard.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Dashboard Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Creator.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Creator Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Canvas.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Canvas Page</p>
+            </slide>
+          </carousel>
+          <div class='bottomCar'>
+            <a href="https://doodle.ninja/#/" target="_blank"><button class='carbut'>Live Site</button></a>
+            <a href="https://github.com/michaeljamie/tool-share" target="_blank"><button class='carbut'>Github</button></a>
+          </div>
         </div>
         
-      </div> -->
+      </div>
     </div>
     <div id="div-skills"></div>
     <div class = 'skills'>
@@ -520,7 +547,7 @@ nav.fade-in {
 }
 
 .portfolio {
-  height: 140vh;
+  height: 250vh;
   background:  linear-gradient( rgba(200, 200, 200, 0.603), rgba(200, 200, 200, 0.583) ), url('./../assets/bkgd2.jpg');
   background-position: center;
   background-size: cover;
@@ -573,6 +600,7 @@ nav.fade-in {
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
+  overflow: hidden;
 }
 
 .portfolioSide {
@@ -979,6 +1007,7 @@ nav.fade-in {
   .portfolioBack {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .bottomcar {
@@ -1001,6 +1030,7 @@ nav.fade-in {
 
    .portfolioSide {
     width: 80vw;
+    overflow: hidden;
   }
 
   .portfolioSide>h4 {
@@ -1027,6 +1057,12 @@ nav.fade-in {
   .portfolioSide>p {
     font-size: 15px;
   }
+
+  // .portfolioDesc {
+  //   overflow: hidden;
+  //   font-size: 15px;
+  //   font-family: 'Montserrat', sans-serif;
+  // }
 
   .skills {
     text-align: center;
@@ -1136,6 +1172,26 @@ nav.fade-in {
 
   .footer {
     height: 30vh;
+  }
+
+}
+
+@media (max-width: 1300px) {
+   .contact {
+    height: 140vh;
+    font-size: 20px;
+  }
+
+  .contactTitle {
+    font-size: 30px;
+  }
+
+  .input1 {
+    margin-top: 25vh;
+  }
+
+  .portfolioSide>p {
+    font-size: 14px;
   }
 
 }

@@ -63,10 +63,11 @@
         <div class='portfolioSide'>
           <h3>Personally Developed Web App</h3>
           <h1>DOODLE NINJA</h1>
-          <h4>Collaborative Whiteboard App for Designers, Developers, Managers, and Teachers</h4>
+          <h4>Collaborative Whiteboard App for Designers, Developers, Managers, Teachers, and Remote Teams</h4>
           <h2>TECHNOLOGY USED:</h2>
           <h4>React | Redux | HTML | CSS | Javascript | Node | Express | PostgreSQL | Massive | Socket IO | Nodemailer </h4> 
-          <p>I created a collaborative whiteboard app where remote teams can sync up and share, visualize, and brainstorm ideas, integrate with all team members simultaneously, and keep everyone involved. UI/UX and design changes can be discussed in real-time with multiple users making and updating the canvas. Teachers can coordinate and interact with students via the digital whiteboard and chat. Managers can review performance with employees remotely, as well as endless other possibilities.</p>
+          <img class='portfolioFoto' src='./../assets/HomePage.png' alt="">
+          <p>Doodle Ninja is a collaborative whiteboard app where remote teams can sync up and share, visualize, and brainstorm ideas, integrate with all team members simultaneously, and keep everyone involved. UI/UX and design changes can be discussed in real-time with multiple users making and updating the canvas. Teachers can coordinate and interact with students via the digital whiteboard and chat. Managers can review performance with employees remotely, as well as endless other possibilities.</p>
           
         </div>
         <div class='portfolioSide1'>
@@ -105,42 +106,43 @@
       </div>
       <div class = 'portfolioBack'>
         <div class='portfolioSide'>
-          <h3>Group Developed Web App</h3>
+          <h3>Group Developed Mobile App</h3>
           <h1>TOOL SHARE</h1>
-          <h4>App </h4>
+          <h4>An app designed to help users save money by renting tools from local listers</h4>
           <h2>TECHNOLOGY USED:</h2>
-          <h4>React | HTML | CSS | Javascript | Node | Express </h4>
-          <p>Technology</p>
+          <h4>React | Redux | HTML | CSS | Javascript | Node | Express | PostgreSQL | Massive | Socket IO | Nodemailer | Cloudinary | Jest | Postman</h4>
+          <img class='portfolioFoto' src="./../assets/ToolShareHome.jpg" alt="">
+          <p>Tool Share is an app that allows its users to complete their home projects without draining their wallets. Rather than having to buy a brand new saw for one time use for a specific project, you can rent it at a daily rate, saving you considerable money and storage space. If you already have tools that you don't often use, you can list them as available to rent and make money on the side.</p>
         </div>
         <div class='portfolioSide1'>
            <carousel :per-page="1" :loop="true" :autoplay="true" :autoplayTimeout="3000" paginationActiveColor="#21c2f8" paginationColor="#bdc3c7" class='Carousel'>
             <slide>
-              <img src='./../assets/HomePage.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Top of Home Page</p>
+              <img src='./../assets/ToolShareHome.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Home Page</p>
             </slide>
             <slide>
-              <img src='./../assets/HomePage2.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Middle of Home Page</p>
+              <img src='./../assets/ToolShareHomeLower.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Lower Home Page</p>
             </slide>
             <slide>
-              <img src='./../assets/HomePage3.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Bottom of Home Page</p>
+              <img src='./../assets/ToolShareLogin.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Login Page</p>
             </slide>
             <slide>
-              <img src='./../assets/Dashboard.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Dashboard Page</p>
+              <img src='./../assets/ToolShareProfile.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Profile Page</p>
             </slide>
             <slide>
-              <img src='./../assets/Creator.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Creator Page</p>
+              <img src='./../assets/ToolShareMessages.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Messages Page</p>
             </slide>
             <slide>
-              <img src='./../assets/Canvas.png' alt="" class = 'portImg'>
-              <p class = 'desc'>Canvas Page</p>
+              <img src='./../assets/ToolShareToolSearch.jpg' alt="" class = 'portImg'>
+              <p class = 'desc'>Tool Search Page</p>
             </slide>
           </carousel>
           <div class='bottomCar'>
-            <a href="https://doodle.ninja/#/" target="_blank"><button class='carbut'>Live Site</button></a>
+            <a href="https://toolshare.pro/#/" target="_blank"><button class='carbut'>Live Site</button></a>
             <a href="https://github.com/michaeljamie/tool-share" target="_blank"><button class='carbut'>Github</button></a>
           </div>
         </div>
@@ -289,7 +291,7 @@ export default {
     window.addEventListener('scroll', function() { 
       scrollpos = window.scrollY;
 
-      if (scrollpos >= header_height-50) { add_class_on_scroll() }
+      if (scrollpos >= header_height-80) { add_class_on_scroll() }
       else { remove_class_on_scroll() }
 
       
@@ -361,14 +363,14 @@ export default {
 }
 
 nav {
-  --ease: all 700ms ease;
+  --ease: all 600ms ease;
   transition: var(--ease);
-  height: 20%;
+  height: 11%;
 }
 
 nav.fade-in {
   background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );
-  height: 25%;
+  height: 13%;
 }
 
 .link {
@@ -654,6 +656,10 @@ nav.fade-in {
   text-align:justify;
 }
 
+.portfolioFoto {
+  display: none;
+}
+
 .portfolioSide1 {
   display: flex;
 	flex-direction: column;
@@ -933,11 +939,12 @@ nav.fade-in {
 
 
   nav {
-    height: 15%;
+    height: 13%;
   }
 
   nav.fade-in {
-    height: 20%;
+    height: 16%;
+    padding-top: 9%;
   }
 
   .homeNav {
@@ -1058,6 +1065,11 @@ nav.fade-in {
     font-size: 15px;
   }
 
+  .portfolioFoto {
+  
+    
+  }
+
   // .portfolioDesc {
   //   overflow: hidden;
   //   font-size: 15px;
@@ -1090,8 +1102,8 @@ nav.fade-in {
   }
 
   .contact {
-    font-size: 10px;
-    
+    font-size: 13px;
+    height: auto;
   }
 
   .scrollBlue1 {
@@ -1100,7 +1112,7 @@ nav.fade-in {
 
   .contactMid {
     width: 75vw;
-    height: 45vh;
+    height: auto;
   }
 
   .portfolioSubtitle1 {
@@ -1115,11 +1127,13 @@ nav.fade-in {
 
   .contactBottom {
     align-content: center;
+    height: auto;
+    margin: 0;
   }
 
   .input1 {
     width: 30vw;
-    margin-top: 12vh;
+    margin-top: 8vh;
   }
 
   .input2 {
@@ -1159,7 +1173,18 @@ nav.fade-in {
   }
 
   .contact {
-    height: 125vh;
+    height: auto;
+    font-size: 16px;
+  }
+
+    .contactBottom {
+    align-content: center;
+    height: auto;
+    margin: 0;
+  }
+
+  .input1 {
+    margin-top: 5vh;
   }
 
   .about {

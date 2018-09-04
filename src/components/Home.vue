@@ -1169,7 +1169,7 @@ nav.fade-in {
     margin-top: 0;
   }
   .portfolioSide1 {
-    height: 10vh;
+    height: 14vh;
   }
 
   .contact {

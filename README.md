@@ -1,10 +1,12 @@
 # Web Development Portfolio
 
-#### My Portfolio Site to showcase my projects and skills.
+A portfolio site to showcase my projects and skills built in Vue.
 
-### Live Site Here: https://www.michaeljamie.com
+[Live Site](https://michaeljamie.com/ "Michael Johnston - Portfolio") | [LinkedIn Profile](https://www.linkedin.com/in/michaeljamiejohnston/ "LinkedIn") | Hosted with Digital Ocean/Heroku
 
-### LinkedIn: https://www.linkedin.com/in/michaeljamiejohnston/
+### Technologies Used:
+
+Vue | Nodemailer | CSS | ParticlesJS
 
 ### Preview:
 

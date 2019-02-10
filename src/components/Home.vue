@@ -61,6 +61,51 @@
       </div>
       <div class = 'portfolioBack'>
         <div class='portfolioSide'>
+          <h3>Professionally Developed Web Site</h3>
+          <h1>Nokē.com</h1>
+          <h4>Landing page for Nokē highlighting product and software offerings as well as the Nokē team.  The site has hundreds of thousands of visits annually.</h4>
+          <h2>TECHNOLOGY USED:</h2>
+          <h4>HTML | CSS | Vanilla Javascript</h4> 
+          <img class='portfolioFoto' src='./../assets/HomePage.png' alt="">
+          <p>Doodle Ninja is a collaborative whiteboard app where remote teams can sync up and share, visualize, and brainstorm ideas, integrate with all team members simultaneously, and keep everyone involved. UI/UX and design changes can be discussed in real-time with multiple users making and updating the canvas. Teachers can coordinate and interact with students via the digital whiteboard and chat. Managers can review performance with employees remotely, as well as endless other possibilities.</p>
+          
+        </div>
+        <div class='portfolioSide1'>
+          <carousel :per-page="1" :loop="true" :autoplay="true" :autoplayTimeout="3000" paginationActiveColor="#21c2f8" paginationColor="#bdc3c7" class='Carousel'>
+            <slide>
+              <img src='./../assets/Noke1.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Nokē Home Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Noke2.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Middle of Nokē Home Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Noke3.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Nokē Software Page</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Noke5.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Nokē Product Page - Mobile</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Noke4.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Nokē Home Page - Mobile</p>
+            </slide>
+            <slide>
+              <img src='./../assets/Noke6.png' alt="" class = 'portImg'>
+              <p class = 'desc'>Nokē Home Page - Tablet</p>
+            </slide>
+          </carousel>
+          <div class='bottomCar'>
+            <a href="https://noke.com/" target="_blank"><button class='carbut'>Live Site</button></a>
+            <a href="https://github.com/michaeljamie/Personal_Project" target="_blank"><button class='carbut'>Github</button></a>
+          </div>
+        </div>
+        
+      </div>
+      <div class = 'portfolioBack'>
+        <div class='portfolioSide'>
           <h3>Personally Developed Web App</h3>
           <h1>DOODLE NINJA</h1>
           <h4>Collaborative Whiteboard App for Designers, Developers, Managers, Teachers, and Remote Teams</h4>
@@ -549,7 +594,7 @@ nav.fade-in {
 }
 
 .portfolio {
-  height: 250vh;
+  height: auto;
   background:  linear-gradient( rgba(200, 200, 200, 0.603), rgba(200, 200, 200, 0.583) ), url('./../assets/bkgd2.jpg');
   background-position: center;
   background-size: cover;
@@ -715,7 +760,7 @@ nav.fade-in {
   margin: 10px;
   width: 30vw;
   height: 36vh;
-  border: .5px solid black;
+  
 }
 
 .desc {

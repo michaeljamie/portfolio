@@ -1110,11 +1110,6 @@ nav.fade-in {
     font-size: 15px;
   }
 
-  .portfolioFoto {
-  
-    
-  }
-
   // .portfolioDesc {
   //   overflow: hidden;
   //   font-size: 15px;
